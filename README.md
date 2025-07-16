@@ -19,8 +19,8 @@ Predict whether a given Amazon review will be marked as helpful based on its tex
 
 - **Platform**: Azure Databricks (All-Purpose Compute)
 - **Language**: PySpark (Spark NLP)
-- **Libraries**: Spark MLlib, Databricks Notebook
-- **Tools**: TF-IDF, Logistic Regression, Feature Indexing, Vector Assembler
+- **Libraries**: Spark MLlib, Databricks Notebook, Pandas
+- **Tools**: TF-IDF, Logistic Regression, Feature Indexing, Vector Assembler 
 
 ---
 
@@ -32,12 +32,20 @@ Predict whether a given Amazon review will be marked as helpful based on its tex
 - Extracted features: review length, days since review, verified status, reviewer ID, ASIN
 
 ### 🧼 Text Processing Pipeline
-1. Sentence Detector  
+1. Document Assembler  
 2. Tokenizer  
 3. Normalizer  
 4. Stop Words Removal  
 5. Lemmatizer  
-6. Finisher  
+6. Finisher 
+
+Additional(Not in Main Model): - 
+1. SentenceDetector
+2. Normalizer
+3. PerceptronModel (Pos_Tagger)
+4. Chunker
+5. Word2VecModel
+6. SentenceEmbeddings
 
 ### 🏗 Feature Engineering
 - One-hot encoding for categorical variables
@@ -91,8 +99,11 @@ Predict whether a given Amazon review will be marked as helpful based on its tex
 
 ## 📁 Repository Structure
 ```
-├── 00_TeamAdelaide_Presentation.pdf # Final project presentation
-├── Notebook_Link.txt # (optional) link to Databricks notebook
+├── 00_TeamAdelaide_Presentation.pdf # Final project presentation.
+├── TF-IDF.ipynb # Main model. Simplest but with best results.
+├── TF-IDF_plus_Word2Vec.ipynb  # Adds model insights using regression coefficients of grouped features to main model
+├── Embeddings_Plus_POStagging.ipynb  # Adds Word2Vec and additional NLP techniques mentioned above
+├── Embeddings_Plus_POStagging_v2.ipynb  # Adds Word2Vec, additional NLP techniques individually (Not in a pipeline)
 ├── README.md # You're here!
 ```
 
