@@ -121,12 +121,12 @@ This helped us confirm that:
 
 ## 📁 Repository Structure
 ```
-├── 00_TeamAdelaide_Presentation.pdf # Final project presentation.
-├── TF-IDF.ipynb # Main model. Simplest but with best results.
-├── TF-IDF_plus_Word2Vec.ipynb  # Adds model insights using regression coefficients of grouped features to main model
-├── Embeddings_Plus_POStagging.ipynb  # Adds Word2Vec and additional NLP techniques mentioned above
-├── Embeddings_Plus_POStagging_v2.ipynb  # Adds Word2Vec, additional NLP techniques individually (Not in a pipeline)
-├── README.md # You're here!
+├── 00_TeamAdelaide_Presentation.pdf      # Final project presentation.
+├── TF-IDF.ipynb                          # Main model. Simplest but with best results.
+├── TF-IDF_plus_Word2Vec.ipynb            # Adds model insights using regression coefficients of grouped features to main model
+├── Embeddings_Plus_POStagging.ipynb      # Adds Word2Vec and additional NLP techniques mentioned above
+├── Embeddings_Plus_POStagging_v2.ipynb   # Adds Word2Vec, additional NLP techniques individually (Not in a pipeline)
+├── README.md                             # You're here!
 ```
 
 ---
