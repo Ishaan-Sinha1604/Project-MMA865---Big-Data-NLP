@@ -90,17 +90,13 @@ Predict whether a given Amazon review will be marked as helpful based on its tex
 ---
 
 ## 📁 Repository Structure
-
+```
 ├── 00_TeamAdelaide_Presentation.pdf # Final project presentation
 ├── Notebook_Link.txt # (optional) link to Databricks notebook
 ├── README.md # You're here!
-
-yaml
-Copy
-Edit
+```
 
 ---
-
 ## 📬 Contact
 
 **Ishaan Sinha**  
