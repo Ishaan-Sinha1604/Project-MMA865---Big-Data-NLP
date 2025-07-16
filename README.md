@@ -20,7 +20,7 @@ Predict whether a given Amazon review will be marked as helpful based on its tex
 - **Platform**: Azure Databricks (All-Purpose Compute)
 - **Language**: PySpark (Spark NLP)
 - **Libraries**: Spark MLlib, Databricks Notebook, Pandas
-- **Tools**: TF-IDF, Logistic Regression, Feature Indexing, Vector Assembler 
+- **Tools**: TF-IDF, Logistic Regression, Feature Indexing, Vector Assembler, Custom Function in PySpark
 
 ---
 
@@ -58,7 +58,29 @@ Additional(Not in Main Model): -
 - **Split**: 80% training, 20% testing
 
 ---
+## 🧠 Feature Importance Extraction
 
+After training the logistic regression model, we used a custom PySpark function to extract and rank feature coefficients:
+
+- The function `ExtractFeatureCoeficient()` takes the model and transformed dataset, filters out non-feature columns, and pairs coefficients with feature names.
+- The results were sorted to identify which engineered features had the **strongest positive or negative influence** on predicting helpful reviews.
+
+### 🔍 Top Weighted Features:
+
+| Feature         | Coefficient |
+|----------------|-------------|
+| `len`          | +0.29       |
+| `reviewerIDVec`| +0.06       |
+| `verified`     | –0.13       |
+| `idf` / `idf2` | –0.12 to –0.17 |
+| `overallIndex` | –0.15       |
+
+This helped us confirm that:
+- Longer reviews are more helpful
+- Verified status, while intuitive, had a negative weight
+- TF-IDF-based word importance contributed negatively when overly generic
+
+---
 ## 📊 Results
 
 | Metric        | Value   |
