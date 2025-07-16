@@ -9,7 +9,7 @@ Predict whether a given Amazon review will be marked as helpful based on its tex
 
 **Dataset**:  
 - Source: [Amazon Product Reviews (1996–2018)](https://jmcauley.ucsd.edu/data/amazon/)
-- Size: Over 32 million reviews
+- Size: Over 3.14 million reviews
 
 **Target Variable**:  
 - `label = 1` (helpful), `label = 0` (not helpful)
